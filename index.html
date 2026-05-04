@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artinormee - Membantu Meringankan Gejala Hipertensi</title>
+    <style>
+        /* Estilos Gerais */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            padding: 20px 40px;
+        }
+        h1, h2, h3 {
+            color: #d93025;
+            text-align: center;
+        }
+        .headline {
+            font-size: 28px;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        .subtitle {
+            font-size: 18px;
+            text-align: center;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        
+        /* Oferta e Preço (Destaque) */
+        .offer-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #e8f0fe;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 20px 0 40px 0;
+            gap: 30px;
+            border: 2px dashed #1a73e8;
+        }
+        .product-image {
+            width: 100%;
+            max-width: 350px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+        .price-details {
+            text-align: center;
+        }
+        .discount-badge {
+            background-color: #d93025;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 18px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        .old-price {
+            font-size: 20px;
+            color: #777;
+            text-decoration: line-through;
+            margin: 5px 0;
+        }
+        .new-price {
+            font-size: 36px;
+            font-weight: bold;
+            color: #1a73e8;
+            margin: 5px 0 20px 0;
+        }
+
+        /* Botão de Compra */
+        .btn-buy {
+            display: inline-block;
+            background-color: #34a853;
+            color: #ffffff;
+            font-size: 22px;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            transition: transform 0.2s, background-color 0.2s;
+            animation: pulse 2s infinite;
+        }
+        .btn-buy:hover {
+            background-color: #2b8a44;
+            transform: scale(1.05);
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(52, 168, 83, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(52, 168, 83, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(52, 168, 83, 0); }
+        }
+
+        /* Seção de Alerta */
+        .alert-box {
+            border: 2px solid #d93025;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #fdf3f2;
+            margin-bottom: 30px;
+        }
+        .alert-box h2 {
+            margin-top: 0;
+            font-size: 24px;
+        }
+        
+        /* Lista de Benefícios */
+        .benefits-list {
+            list-style: none;
+            padding: 0;
+        }
+        .benefits-list li {
+            margin-bottom: 10px;
+            padding-left: 30px;
+            position: relative;
+            font-size: 16px;
+        }
+        .benefits-list li::before {
+            content: '❤️';
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+
+        /* Passos e Ação */
+        .steps-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            gap: 15px;
+        }
+        .step-box {
+            flex: 1;
+            text-align: center;
+            padding: 20px;
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .step-box h4 {
+            color: #1a73e8;
+            margin-bottom: 10px;
+        }
+
+        /* Rodapé / Disclaimer (Essencial para Google Ads) */
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ccc;
+            font-size: 12px;
+            color: #777;
+            text-align: center;
+        }
+
+        /* Responsividade para Celulares */
+        @media (max-width: 600px) {
+            .offer-section {
+                flex-direction: column;
+                padding: 20px;
+            }
+            .steps-container {
+                flex-direction: column;
+            }
+            .headline {
+                font-size: 24px;
+            }
+            .container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- Cabeçalho -->
+        <h1 class="headline">Membantu Meringankan Gejala Hipertensi Anda Secara Alami</h1>
+        <p class="subtitle">Artinormee adalah formula herbal yang dirancang khusus untuk mendukung kesehatan kardiovaskular Anda.</p>
+
+        <!-- PRIMEIRA CHAMADA PARA AÇÃO (TOPO DA PÁGINA) -->
+        <div class="offer-section">
+            <div>
+                <!-- IMAGEM DO PRODUTO AQUI -->
+                <img src="artinormee.png" alt="Artinormee - Keseimbangan Alami" class="product-image">
+            </div>
+            <div class="price-details">
+                <span class="discount-badge">DISKON 50% HARI INI</span>
+                <p class="old-price">Harga Normal: <s>780.000 IDR</s></p>
+                <p class="new-price">Hanya: 390.000 IDR</p>
+                <a href="https://r6vi7.doctoreverd.com/l" class="btn-buy">PESAN SEKARANG</a>
+                <p style="font-size: 12px; color: #666; margin-top: 10px;">*Stok terbatas dengan harga promosi</p>
+            </div>
+        </div>
+
+        <!-- Seção de Alerta (Baseado na Imagem "Kejutan") -->
+        <div class="alert-box">
+            <h2>KEJUTAN: Ancaman Tersembunyi</h2>
+            <p>Penyakit kardiovaskular adalah penyebab utama kematian di seluruh dunia. Menurut WHO, lebih dari 40% dari semua kematian disebabkan oleh penyakit jantung.</p>
+            <p style="color: #d93025; font-weight: bold;">85% dari kematian ini terjadi akibat serangan jantung atau stroke. Jangan abaikan tekanan darah Anda!</p>
+        </div>
+
+        <!-- Benefícios do Produto -->
+        <h3>Bagaimana Artinormee Bekerja?</h3>
+        <p>Hipertensi arteri mengganggu seluruh tubuh. Artinormee dengan ekstrak alami (seperti Ekstrak Bawang Putih dan Syzigium Polyanthum Folium) membantu Anda dengan:</p>
+        <ul class="benefits-list">
+            <li>Menormalkan tekanan secara alami.</li>
+            <li>Membantu mengembalikan elastisitas pembuluh darah.</li>
+            <li>Membantu menurunkan kolesterol dalam darah.</li>
+            <li>Mendukung fungsi sistem kardiovaskular yang sehat.</li>
+        </ul>
+
+        <!-- 3 Passos (Baseado na imagem 3 Langkah Aksi) -->
+        <h3>3 Langkah Aksi Artinormee</h3>
+        <div class="steps-container">
+            <div class="step-box">
+                <h4>1. PEMULIHAN</h4>
+                <p>Membantu menstabilkan tekanan darah ke indikator fisiologis individu.</p>
+            </div>
+            <div class="step-box">
+                <h4>2. NORMALISASI</h4>
+                <p>Mendukung irama jantung yang sehat dan membantu mengurangi kekentalan darah.</p>
+            </div>
+            <div class="step-box">
+                <h4>3. PERLINDUNGAN</h4>
+                <p>Mencegah perubahan aterosklerotik pada pembuluh darah dan melindungi jantung.</p>
+            </div>
+        </div>
+
+        <p style="text-align: center; font-size: 18px; margin-top: 30px;">
+            <strong>Mulai perawatan Anda secepat mungkin. Jangan biarkan hipertensi mengendalikan hidup Anda!</strong>
+        </p>
+
+        <!-- SEGUNDA CHAMADA PARA AÇÃO (FIM DA PÁGINA) -->
+        <div class="offer-section" style="background-color: #fdf3f2; border-color: #d93025;">
+            <div>
+                <!-- IMAGEM DO PRODUTO AQUI -->
+                <img src="artinormee.png" alt="Artinormee - Keseimbangan Alami" class="product-image">
+            </div>
+            <div class="price-details">
+                <span class="discount-badge">PENAWARAN TERBATAS (50% OFF)</span>
+                <p class="old-price">Harga Normal: <s>780.000 IDR</s></p>
+                <p class="new-price">Hanya: 390.000 IDR</p>
+                <a href="https://r6vi7.doctoreverd.com/l" class="btn-buy" style="background-color: #d93025;">LAKUKAN TREATMENT SEKARANG</a>
+            </div>
+        </div>
+
+        <!-- Rodapé e Disclaimer (Obrigatório para compliance de saúde no Google Ads) -->
+        <div class="footer">
+            <p><strong>Penafian (Disclaimer):</strong> Hasil dapat bervariasi pada setiap individu. Situs ini bukan bagian dari situs web Facebook atau Facebook Inc, maupun Google. Selain itu, situs ini TIDAK didukung oleh Facebook atau Google dengan cara apa pun. Produk ini merupakan suplemen herbal (POM TR212264491) yang membantu meringankan gejala darah tinggi ringan. Harap konsultasikan dengan dokter Anda sebelum memulai suplemen baru, terutama jika Anda memiliki kondisi medis yang sudah ada.</p>
+            <p>&copy; 2026 Artinormee. Hak Cipta Dilindungi Undang-Undang.</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
