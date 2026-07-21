@@ -12,273 +12,382 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Artinormee - Membantu Meringankan Gejala Hipertensi</title>
+    <title>Artinormee - Penawaran Khusus</title>
+    <!-- Fonte do Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
-        /* Estilos Gerais */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
+        /* Reset e Configurações Básicas */
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f8f9fa;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
         }
+
+        body {
+            background-color: #f7f9fc;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Barra Superior (Top Bar) */
+        .top-bar {
+            background-color: #1a4f76;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .top-bar span {
+            margin: 0 10px;
+        }
+
+        /* Container Principal */
         .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: #ffffff;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
-            padding: 20px 40px;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
         }
-        h1, h2, h3 {
-            color: #d93025;
+
+        /* Cabeçalho de Fundo de Funil */
+        .header-title {
             text-align: center;
+            margin-bottom: 30px;
         }
-        .headline {
-            font-size: 28px;
-            font-weight: bold;
-            margin-top: 20px;
-            margin-bottom: 10px;
-            text-transform: uppercase;
+
+        .header-title h1 {
+            color: #1a4f76;
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 15px;
         }
-        .subtitle {
-            font-size: 18px;
-            text-align: center;
+
+        .header-title p {
             color: #555;
-            margin-bottom: 20px;
+            font-size: 16px;
+            max-width: 700px;
+            margin: 0 auto;
         }
-        
-        /* Oferta e Preço (Destaque) */
-        .offer-section {
+
+        /* Card de Checkout Principal */
+        .checkout-card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            display: flex;
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+
+        /* Coluna Esquerda: Imagem */
+        .left-col {
+            background-color: #eef5fa;
+            width: 45%;
+            padding: 30px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: #e8f0fe;
-            border-radius: 12px;
-            padding: 30px;
-            margin: 20px 0 40px 0;
-            gap: 30px;
-            border: 2px dashed #1a73e8;
         }
+
+        .image-wrapper {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* CLASSE NOVA: Deixa a imagem 100% responsiva */
         .product-image {
             width: 100%;
-            max-width: 350px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            height: auto;
+            max-height: 450px;
+            object-fit: contain;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
-        .price-details {
+
+        /* Classe temporária para o texto de espaço vazio */
+        .placeholder-dashed {
+            width: 100%;
+            min-height: 350px;
+            border: 2px dashed #95b3c8;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-        }
-        .discount-badge {
-            background-color: #d93025;
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-weight: bold;
-            font-size: 18px;
-            display: inline-block;
-            margin-bottom: 10px;
-        }
-        .old-price {
-            font-size: 20px;
-            color: #777;
-            text-decoration: line-through;
-            margin: 5px 0;
-        }
-        .new-price {
-            font-size: 36px;
-            font-weight: bold;
-            color: #1a73e8;
-            margin: 5px 0 20px 0;
-        }
-
-        /* Botão de Compra */
-        .btn-buy {
-            display: inline-block;
-            background-color: #34a853;
-            color: #ffffff;
-            font-size: 22px;
-            font-weight: bold;
-            text-decoration: none;
-            padding: 15px 40px;
-            border-radius: 50px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-            transition: transform 0.2s, background-color 0.2s;
-            animation: pulse 2s infinite;
-        }
-        .btn-buy:hover {
-            background-color: #2b8a44;
-            transform: scale(1.05);
-        }
-
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(52, 168, 83, 0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(52, 168, 83, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(52, 168, 83, 0); }
-        }
-
-        /* Seção de Alerta */
-        .alert-box {
-            border: 2px solid #d93025;
+            color: #5a7b93;
+            font-size: 14px;
+            font-weight: 600;
             padding: 20px;
-            border-radius: 8px;
-            background-color: #fdf3f2;
-            margin-bottom: 30px;
         }
-        .alert-box h2 {
-            margin-top: 0;
-            font-size: 24px;
+
+        /* Coluna Direita: Informações e Pagamento */
+        .right-col {
+            width: 55%;
+            padding: 40px;
         }
-        
-        /* Lista de Benefícios */
+
+        .right-col h2 {
+            color: #1a4f76;
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
         .benefits-list {
             list-style: none;
-            padding: 0;
+            margin-bottom: 25px;
         }
+
         .benefits-list li {
-            margin-bottom: 10px;
-            padding-left: 30px;
             position: relative;
-            font-size: 16px;
+            padding-left: 30px;
+            margin-bottom: 12px;
+            font-size: 15px;
+            color: #444;
         }
+
         .benefits-list li::before {
-            content: '❤️';
+            content: "✓";
             position: absolute;
             left: 0;
-            top: 2px;
+            top: 0;
+            color: #1a4f76;
+            font-weight: 800;
+            font-size: 16px;
         }
 
-        /* Passos e Ação */
-        .steps-container {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 40px;
-            gap: 15px;
-        }
-        .step-box {
-            flex: 1;
-            text-align: center;
+        /* Caixa de Preço */
+        .price-box {
+            background-color: #fffafb;
+            border: 1px solid #f9dadd;
+            border-radius: 10px;
             padding: 20px;
-            background: #fff;
-            border: 1px solid #eee;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-        .step-box h4 {
-            color: #1a73e8;
-            margin-bottom: 10px;
+            text-align: center;
+            margin-bottom: 25px;
         }
 
-        /* Rodapé / Disclaimer (Essencial para Google Ads) */
-        .footer {
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #ccc;
+        .discount-badge {
+            background-color: #e74c3c;
+            color: #ffffff;
             font-size: 12px;
+            font-weight: 800;
+            padding: 6px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        .old-price {
+            color: #999;
+            font-size: 16px;
+            text-decoration: line-through;
+            margin-bottom: 5px;
+        }
+
+        .new-price-container {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            color: #2c3e50;
+            font-weight: 800;
+        }
+
+        .currency {
+            font-size: 20px;
+            margin-top: 5px;
+            margin-right: 5px;
+        }
+
+        .price-value {
+            font-size: 42px;
+            line-height: 1;
+        }
+
+        .price-currency-end {
+             font-size: 20px;
+             margin-top: 5px;
+             margin-left: 5px;
+        }
+
+        /* Botão de Compra CTA */
+        .btn-cta {
+            display: block;
+            background-color: #1a4f76;
+            color: #ffffff;
+            text-align: center;
+            padding: 18px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 800;
+            box-shadow: 0 4px 15px rgba(26, 79, 118, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn-cta:hover {
+            background-color: #123b5c;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(26, 79, 118, 0.4);
+        }
+
+        .secure-info {
+            text-align: center;
+            font-size: 13px;
             color: #777;
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        /* Rodapé Escuro (Footer) */
+        .footer {
+            background-color: #1e1e1e;
+            color: #999;
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 12px;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            color: #bbb;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer-links a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        .disclaimer {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.5;
             text-align: center;
         }
 
         /* Responsividade para Celulares */
-        @media (max-width: 600px) {
-            .offer-section {
+        @media (max-width: 768px) {
+            .checkout-card {
                 flex-direction: column;
+            }
+            .left-col {
+                width: 100%;
                 padding: 20px;
             }
-            .steps-container {
-                flex-direction: column;
+            .right-col {
+                width: 100%;
+                padding: 30px 20px;
             }
-            .headline {
-                font-size: 24px;
+            .header-title h1 {
+                font-size: 26px;
             }
-            .container {
-                padding: 15px;
+            .price-value {
+                font-size: 36px;
+            }
+            .top-bar {
+                font-size: 11px;
+            }
+            .product-image {
+                max-height: 350px;
             }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        
-        <!-- Cabeçalho -->
-        <h1 class="headline">Membantu Meringankan Gejala Hipertensi Anda Secara Alami</h1>
-        <p class="subtitle">Artinormee adalah formula herbal yang dirancang khusus untuk mendukung kesehatan kardiovaskular Anda.</p>
-
-        <!-- PRIMEIRA CHAMADA PARA AÇÃO (TOPO DA PÁGINA) -->
-        <div class="offer-section">
-            <div>
-                <!-- IMAGEM DO PRODUTO AQUI -->
-                <img src="artinormee.png" alt="Artinormee - Keseimbangan Alami" class="product-image">
-            </div>
-            <div class="price-details">
-                <span class="discount-badge">DISKON 50% HARI INI</span>
-                <p class="old-price">Harga Normal: <s>780.000 IDR</s></p>
-                <p class="new-price">Hanya: 390.000 IDR</p>
-                <a href="https://r6vi7.doctoreverd.com/l" class="btn-buy">PESAN SEKARANG</a>
-                <p style="font-size: 12px; color: #666; margin-top: 10px;">*Stok terbatas dengan harga promosi</p>
-            </div>
-        </div>
-
-        <!-- Seção de Alerta (Baseado na Imagem "Kejutan") -->
-        <div class="alert-box">
-            <h2>KEJUTAN: Ancaman Tersembunyi</h2>
-            <p>Penyakit kardiovaskular adalah penyebab utama kematian di seluruh dunia. Menurut WHO, lebih dari 40% dari semua kematian disebabkan oleh penyakit jantung.</p>
-            <p style="color: #d93025; font-weight: bold;">85% dari kematian ini terjadi akibat serangan jantung atau stroke. Jangan abaikan tekanan darah Anda!</p>
-        </div>
-
-        <!-- Benefícios do Produto -->
-        <h3>Bagaimana Artinormee Bekerja?</h3>
-        <p>Hipertensi arteri mengganggu seluruh tubuh. Artinormee dengan ekstrak alami (seperti Ekstrak Bawang Putih dan Syzigium Polyanthum Folium) membantu Anda dengan:</p>
-        <ul class="benefits-list">
-            <li>Menormalkan tekanan secara alami.</li>
-            <li>Membantu mengembalikan elastisitas pembuluh darah.</li>
-            <li>Membantu menurunkan kolesterol dalam darah.</li>
-            <li>Mendukung fungsi sistem kardiovaskular yang sehat.</li>
-        </ul>
-
-        <!-- 3 Passos (Baseado na imagem 3 Langkah Aksi) -->
-        <h3>3 Langkah Aksi Artinormee</h3>
-        <div class="steps-container">
-            <div class="step-box">
-                <h4>1. PEMULIHAN</h4>
-                <p>Membantu menstabilkan tekanan darah ke indikator fisiologis individu.</p>
-            </div>
-            <div class="step-box">
-                <h4>2. NORMALISASI</h4>
-                <p>Mendukung irama jantung yang sehat dan membantu mengurangi kekentalan darah.</p>
-            </div>
-            <div class="step-box">
-                <h4>3. PERLINDUNGAN</h4>
-                <p>Mencegah perubahan aterosklerotik pada pembuluh darah dan melindungi jantung.</p>
-            </div>
-        </div>
-
-        <p style="text-align: center; font-size: 18px; margin-top: 30px;">
-            <strong>Mulai perawatan Anda secepat mungkin. Jangan biarkan hipertensi mengendalikan hidup Anda!</strong>
-        </p>
-
-        <!-- SEGUNDA CHAMADA PARA AÇÃO (FIM DA PÁGINA) -->
-        <div class="offer-section" style="background-color: #fdf3f2; border-color: #d93025;">
-            <div>
-                <!-- IMAGEM DO PRODUTO AQUI -->
-                <img src="artinormee.png" alt="Artinormee - Keseimbangan Alami" class="product-image">
-            </div>
-            <div class="price-details">
-                <span class="discount-badge">PENAWARAN TERBATAS (50% OFF)</span>
-                <p class="old-price">Harga Normal: <s>780.000 IDR</s></p>
-                <p class="new-price">Hanya: 390.000 IDR</p>
-                <a href="https://r6vi7.doctoreverd.com/l" class="btn-buy" style="background-color: #d93025;">LAKUKAN TREATMENT SEKARANG</a>
-            </div>
-        </div>
-
-        <!-- Rodapé e Disclaimer (Obrigatório para compliance de saúde no Google Ads) -->
-        <div class="footer">
-            <p><strong>Penafian (Disclaimer):</strong> Hasil dapat bervariasi pada setiap individu. Situs ini bukan bagian dari situs web Facebook atau Facebook Inc, maupun Google. Selain itu, situs ini TIDAK didukung oleh Facebook atau Google dengan cara apa pun. Produk ini merupakan suplemen herbal (POM TR212264491) yang membantu meringankan gejala darah tinggi ringan. Harap konsultasikan dengan dokter Anda sebelum memulai suplemen baru, terutama jika Anda memiliki kondisi medis yang sudah ada.</p>
-            <p>&copy; 2026 Artinormee. Hak Cipta Dilindungi Undang-Undang.</p>
-        </div>
-
+    <!-- Barra de Confiança Superior -->
+    <div class="top-bar">
+        <span>🔒 Pembelian 100% Aman</span> | 
+        <span>Pengiriman ke Seluruh Negeri</span> | 
+        <span>Kepuasan Dijamin</span>
     </div>
+
+    <div class="container">
+        <!-- Títulos Fundo de Funil -->
+        <header class="header-title">
+            <h1>Anda selangkah lagi untuk mendukung kesehatan kardiovaskular Anda</h1>
+            <p>Selesaikan pesanan Artinormee Anda hari ini dan manfaatkan penawaran eksklusif kami sebelum stok habis.</p>
+        </header>
+
+        <!-- Container de Checkout -->
+        <div class="checkout-card">
+            
+            <!-- COLUNA DA IMAGEM -->
+            <div class="left-col">
+                <div class="image-wrapper">
+                    
+                    <!-- INSTRUÇÕES PARA O VISUAL STUDIO CODE: -->
+                    <!-- Substitua a div <div class="placeholder-dashed"> abaixo pela sua tag <img> usando a classe class="product-image" -->
+                    <!-- EXEMPLO DE COMO DEVE FICAR:
+                         <img src="NOME_DA_SUA_IMAGEM.png" alt="Artinormee" class="product-image"> 
+                    -->
+                    
+                    <div class="placeholder-dashed">
+                        <img src="Artinromeee.jpeg" alt="Artinormee" class="product-image">
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- COLUNA DE CONTEÚDO E COMPRA -->
+            <div class="right-col">
+                <h2>Apa yang Anda dapatkan hari ini?</h2>
+                
+                <ul class="benefits-list">
+                    <li><strong>Artinormee Asli</strong> (Perawatan dukungan lengkap).</li>
+                    <li>Membantu menormalkan tekanan darah secara alami.</li>
+                    <li>Diformulasikan dengan ekstrak alami pendukung kardiovaskular.</li>
+                    <li>Membantu menjaga elastisitas pembuluh darah Anda.</li>
+                </ul>
+
+                <div class="price-box">
+                    <span class="discount-badge">¡DISKON 50% DITERAPKAN!</span>
+                    <p class="old-price">Harga Normal: 780.000 IDR</p>
+                    <div class="new-price-container">
+                        <span class="price-value">390.000</span>
+                        <span class="price-currency-end">IDR</span>
+                    </div>
+                </div>
+
+                <!-- LINK DE COMPRA -->
+                <a href="https://r6vi7.doctoreverd.com/l" class="btn-cta">¡YA, SAYA INGIN PESAN ARTINORMEE SEKARANG!</a>
+                
+                <div class="secure-info">
+                    <span>🔒 Data Anda dilindungi dan dienkripsi.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rodapé e Conformidade (Google Ads Compliance) -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="#">Syarat dan Ketentuan</a> | 
+            <a href="#">Kebijakan Privasi</a> | 
+            <a href="#">Kebijakan Pengembalian</a> | 
+            <a href="#">Kontak</a>
+        </div>
+        <div class="disclaimer">
+            <strong>Penafian (Disclaimer):</strong> Produk ini merupakan suplemen herbal (POM TR212264491) yang bertujuan untuk membantu memelihara kesehatan. Hasil dapat bervariasi pada setiap individu tergantung pada kondisi tubuh dan gaya hidup. Produk ini tidak ditujukan untuk mendiagnosis, mengobati, menyembuhkan, atau mencegah penyakit berat apapun. Informasi di halaman ini tidak menggantikan nasihat medis profesional. Harap konsultasikan dengan dokter Anda sebelum mengonsumsi suplemen apa pun.
+            <br><br>
+            &copy; 2026 Artinormee. Hak Cipta Dilindungi Undang-Undang.
+        </div>
+    </footer>
+
+</body>
+</html>
 
 </body>
 </html>
